@@ -1,0 +1,40 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+    <li class="breadcrumb-item" [ngClass]="{'active':breadcrumbs.length-1 == i}" *ngFor="let breadcrumb of breadcrumbs; let i = index">
+      <a (click)= "navBread(breadcrumb,false)">{{breadcrumb}} </a>
+    </li>
+
+
+
+  </ol>
+</nav>
+
+
+<div class = "row">
+  <div class="card-deck col-sm-3" *ngFor="let name of manufacturer">
+    <a (click)="navBread(name,true)" class="card">
+
+      <div class="card-body">
+        <h4 class="card-title">{{name}}</h4>
+        <img class="card-img" src="" alt="Card image">
+      </div>
+
+    </a>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-sm-3" *ngFor="let product of products">
+    <div class="card">
+      <a routerLink="['/repairs/tablet.html']">
+        <img class="card-img" src={{product.image_path}} alt="Card image"></a>
+    </div>
+  </div>
+</div>
+
+
+</div>
+

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+       android:id="@+id/likeEpisode"
+       android:icon="@mipmap/ic_favorite_black_24dp"
+       android:showAsAction="always"
+       android:title="Like" />
+  <item
+       android:id="@+id/bookmarkEpisode"
+       android:icon="@mipmap/ic_bookmark_border_black_24dp"
+       android:showAsAction="always"
+       android:title="Bookmark" />
+  <item
+       android:id="@+id/shareEpisode"
+       android:icon="@mipmap/ic_share_black_24dp"
+       android:showAsAction="always"
+       android:title="Share" />
+</menu>

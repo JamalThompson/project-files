@@ -1,0 +1,90 @@
+<div class="Login">
+<div data-reactroot="" id="login-card">
+  <div class="login-sizable-container">
+    <div class="white-background" id="signup-contentContainer">
+
+        <div id="formContainer">
+          <div id="auth-card-header">
+            <div class="logo-container">
+              <div class="formHeaderTemplate">
+                <div class="logo"></div>
+
+              <form (ngSubmit)="login()" #credentialsForm="ngForm">
+                <div id="username-input">
+                  <div class="login-input-container">
+                    <fieldset class="form-group"><label for="email" id="label-email"><!-- react-text: 24 -->Email<!-- /react-text --><!-- react-text: 25 --> <!-- /react-text --></label><input tabindex="1" id="email" name="email" value="" aria-labelledby="label-email" aria-required="false" class="email-input ctHidden form-control" placeholder="Enter email" [(ngModel)]="credentials.email"></fieldset>
+                  </div><small id="Email-notice" class="form-text text-muted"></small></div>
+                <div id="password-input">
+                  <div class="login-input-container">
+                    <fieldset class="form-group"><label for="password" id="label-password"><!-- react-text: 36 -->Password<!-- /react-text --><!-- react-text: 37 --> <!-- /react-text --></label><input type="password" tabindex="2" id="password" name="password" value="" aria-labelledby="label-password" aria-required="false" class="ctHidden form-control" placeholder="Password" [(ngModel)]="credentials.password"></fieldset>
+                  </div><small id="password-notice" class="form-text text-muted"></small></div>
+                <div class="input-container pin-container">
+                  <div class="inline-container">
+                    <fieldset class="form-group">
+                      <div class="form-check"><label for="remember-me" class="form-check-label custom-control custom-checkbox" id="label-remember-me"><input type="checkbox" id="remember-me" value="false" aria-labelledby="label-remember-me" aria-required="false" class="custom-control-input"><span class="custom-control-indicator"></span><span class="custom-control-description">Keep me signed in</span></label></div>
+                    </fieldset>
+                  </div><span><span id="remember-me-tip"><!-- react-text: 50 --> <!-- /react-text --><span role="button" aria-haspopup="true" tabindex="0" class="uxicon uxicon-help" style="cursor: pointer; outline: none;"></span></span>
+              </span>
+                </div><button tabindex="3" class="btn btn-primary btn-block" id="submitBtn" type="submit"><!-- react-text: 53 -->Sign in<!-- /react-text --></button></form>
+              <div>
+                <div id="labeled-divider-login" class="font-primary-bold text-center"><span style="width: 100%;">or</span></div>
+                <div id="fb-signup-btn-container"><button  (click)="socialSignIn('facebook')" class="icon icon-facebook btn btn-primary btn-block" style="height:35px;background-color:#365899;border:#365899;"type="button" ng-click="login()"> Sign In With Facebook</button>  </div>
+              </div>
+            </div>
+            <div class="form-footer-container">
+              <div class="form-footer-content">
+                <p class="font-primary-bold" id="account-message">Don't have an account?</p>
+                <div class="row" id="account-panel"> <a [routerLink]="['/create-login']" class="btn btn-default btn-lg"> Create an account</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<script id="facebook-jssdk" async="" src="//connect.facebook.net/en_US/sdk.js">
+$scope.loginStatus = 'disconnected';
+$scope.facebookIsReady = false;
+$scope.user = null;
+$scope.login = function() {
+Facebook.login(function(response) {
+$scope.loginStatus = response.status;
+testAPI();
+});
+};
+$scope.removeAuth = function() {
+Facebook.api({
+method: 'Auth.revokeAuthorization'
+}, function(response) {
+Facebook.logout(function(response) {
+console.log(JSON.stringify(response));
+});
+});
+};
+$scope.api = function() {
+Facebook.api('/me', function(response) {
+$scope.user = response;
+});
+};
+$scope.$watch(function() {
+return Facebook.isReady();
+}, function(newVal) {
+if (newVal) {
+$scope.facebookIsReady = true;
+}
+});
+
+function testAPI() {
+console.log('Welcome Fetching your information.... ');
+FB.api('/me?fields=id,name,email,first_name,last_name,age_range,picture.type(large)', function(response) {
+console.log(response);
+$scope.first_name = response.first_name;
+$scope.last_name = response.last_name;
+$scope.gender = response.gender;
+$scope.email = response.email;
+$scope.name = response.name;
+$scope.id = response.id;
+});
+}  </script>

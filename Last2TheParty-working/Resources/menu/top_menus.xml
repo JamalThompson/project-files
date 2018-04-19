@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+       android:id="@+id/main_menu"
+       android:icon="@mipmap/ic_menu_black_24dp"
+       android:showAsAction="ifRoom"
+       android:layout_gravity="start" />
+  <item
+      android:id="@+id/main_menu_title"
+      android:text="Title"
+      />
+  <item
+       android:id="@+id/menu_save"
+       android:icon="@mipmap/ic_search_black_24dp"
+       android:showAsAction="ifRoom"
+       android:gravity="center_vertical|right"
+       android:title="Search" />
+  <item
+       android:id="@+id/menu_favorite"
+       android:icon="@mipmap/ic_favorite_black_24dp"
+       android:showAsAction="ifRoom"
+       android:gravity="center_vertical|right"
+       android:title="iTunes Like" />
+  <item
+       android:id="@+id/menu_preferences"
+       android:showAsAction="never"
+       android:icon="@mipmap/ic_more_vert_black_24dp"
+       android:gravity="center_vertical|right" />
+</menu>

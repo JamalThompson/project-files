@@ -1,0 +1,82 @@
+﻿@model ASL.ViewModels.EditServiceViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Service</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <input type="hidden" asp-for="ServiceEdit.Id" />
+            <label asp-for="Cust_Id" class="control-label"></label>
+            @Html.DisplayFor(model => model.Cust_Id)
+
+            <div class="form-group">
+                <label asp-for="ServiceEdit.SvcType" class="control-label"></label>
+                <input asp-for="ServiceEdit.SvcType" class="form-control" />
+                <span asp-validation-for="ServiceEdit.SvcType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceEdit.Address1" class="control-label"></label>
+                <input asp-for="ServiceEdit.Address1" class="form-control" />
+                <span asp-validation-for="ServiceEdit.Address1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceEdit.Address2" class="control-label"></label>
+                <input asp-for="ServiceEdit.Address2" class="form-control" />
+                <span asp-validation-for="ServiceEdit.Address2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceEdit.City" class="control-label"></label>
+                <input asp-for="ServiceEdit.City" class="form-control" />
+                <span asp-validation-for="ServiceEdit.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceEdit.State" class="control-label"></label>
+                <input asp-for="ServiceEdit.State" class="form-control" />
+                <span asp-validation-for="ServiceEdit.State" class="text-danger"></span>
+            </div>
+
+            @*<div class="form-group">
+                <label asp-for="Zip" class="control-label"></label>
+                <input asp-for="Zip" class="form-control" />
+                <span asp-validation-for="Zip" class="text-danger"></span>
+            </div>*@
+
+            <div class="form-group">
+                <label asp-for="ServiceEdit.SvcDescription" class="control-label"></label>
+                <input asp-for="ServiceEdit.SvcDescription" class="form-control" />
+                <span asp-validation-for="ServiceEdit.SvcDescription" class="text-danger"></span>
+            </div>
+
+            @*<div class="form-group">
+                <label asp-for="ServiceEdit.Sched_Date" class="control-label"></label>
+                <input asp-for="ServiceEdit.Sched_Date" class="form-control" />
+                <span asp-validation-for="ServiceEdit.Sched_Date" class="text-danger"></span>
+            </div>*@
+           
+            <div class="form-group">
+                <label asp-for="ServiceEdit.BillSubtotal" class="control-label"></label>
+                <input asp-for="ServiceEdit.BillSubtotal" class="form-control" />
+                <span asp-validation-for="ServiceEdit.BillSubtotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

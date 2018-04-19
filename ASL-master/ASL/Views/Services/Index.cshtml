@@ -1,0 +1,95 @@
+﻿@model IEnumerable<ASL.ViewModels.IndexServiceViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustInfo.Name)
+                </th>
+
+                <th>
+                     @Html.DisplayNameFor(model => model.CustInfo.Phone_Number)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceInfo.SvcType) 
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceInfo.Address1)
+                </th>
+              
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceInfo.SvcDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceInfo.Sched_Date)
+                </th>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceInfo.comp_date)
+               </th>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceInfo.BillSubtotal)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustInfo.Name)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CustInfo.Phone_Number)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceInfo.SvcType) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceInfo.Address1)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceInfo.SvcDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceInfo.Sched_Date)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceInfo.comp_date)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceInfo.BillSubtotal)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ServiceInfo.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ServiceInfo.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ServiceInfo.Id">Delete</a>
+                @if (item.ServiceInfo.comp_date == new DateTime())
+                {
+                    <a class = "btn btn-success" asp-route-id="@item.ServiceInfo.Id" asp-action="SetCompDATE">Completed</a>
+                }
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

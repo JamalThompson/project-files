@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+       android:minHeight="?android:attr/actionBarSize"
+       android:background="#FFFFFF"
+       android:minWidth="25px"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:theme="@android:style/ThemeOverlay.Material.Light"
+       android:popupTheme="@android:style/ThemeOverlay.Material.Light"
+       android:id="@+id/toolbar" 
+       android:gravity="center_vertical|start"/>

@@ -1,0 +1,36 @@
+#body{
+  width:400px;
+  margin: auto;
+  text-align: center;
+
+}
+.card-green{
+  background-color: #265aa5;
+  height: 400px;
+  border-radius: 50%;
+  padding: auto;
+}
+
+
+.Financing-Option{
+  color: white;
+
+}
+.center-vertical{
+  padding:40% 0;
+}
+
+.requirements{
+  height: 400px;
+  border-radius: 50%;
+  padding: auto;
+  background-color: #265aa5;
+  padding:40% 0;
+  color: white;
+}
+.background{
+  background-image:url('../../../Public/images/IamWirelessLogo4.jpg');
+}
+.header{
+  color: darkblue;
+}

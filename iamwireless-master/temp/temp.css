@@ -1,0 +1,68 @@
+.carousel-indicators{
+  background-color: black;
+}
+
+#myCarousel{
+
+  margin-top:100px;
+  height: 300px;
+  width: 600px;
+}
+
+
+.carousel-control{
+  margin-top: 100px;
+  padding-top: 100px;
+  height: 30px;
+}
+
+.carousel-inner{
+  height: 300px;
+}
+
+.card-img{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right:20px;
+}
+
+.nav>li>a{
+  color:white;
+}
+
+.row{
+  margin: 20px;
+}
+
+
+#bannerimage {
+  background-image: url("pics/IamWirelessLogo4.jpg");
+  height: 400px;
+}
+
+#bannerlft{
+  background-image: url("pics/BUYSELLFIXmallgraphic.jpg");
+  float: left;
+  width:150px;
+  height:1270px;
+  margin:right:40px;
+}
+
+#bannerrgt{
+  background-image: url("pics/BUYSELLFIXmallgraphic.jpg");
+  width:150px;
+    height:1270px;
+    float:right;
+    margin:left:40px;
+}
+
+
+.iam{
+  background-image: url("pics/BUYSELLFIXmallgraphic.jpg") ;
+  min-width: 500px;
+  min-height: 800px;
+  background-attachment: fixed;
+    background-position:center;
+
+
+}
